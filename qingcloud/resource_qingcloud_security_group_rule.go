@@ -31,6 +31,10 @@ func resourceQingcloudSecurityGroupRule() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
+			resourceSecurityGroupCidrBlock: {
+				Type:     schema.TypeString,
+				Optional: true,
+			},
 			resourceSecurityGroupRuleProtocol: {
 				Type:         schema.TypeString,
 				Required:     true,
@@ -62,11 +66,6 @@ func resourceQingcloudSecurityGroupRule() *schema.Resource {
 				Type:         schema.TypeString,
 				Optional:     true,
 				ValidateFunc: validatePortString,
-			},
-			resourceSecurityGroupCidrBlock: {
-				Type:         schema.TypeString,
-				Optional:     true,
-				ValidateFunc: validateNetworkCIDR,
 			},
 		},
 	}
